@@ -19,9 +19,10 @@ export const Footer: React.FC = () => {
             height="28"
           />
         </a> */}
-        <Box color="main.200">made by {}</Box>
+        
         <Flex mt={5}>
-          <Box textAlign="center">🧸🧸🧸🧸🧸🧸🧸🧸🧸🧸🧸🧸🧸🧸🧸🧸</Box>
+        {/* <Box color="main.200"></Box> */}
+          <Box textAlign="center">🧸🧸🧸🧸🧸🧸🧸🧸made by Chamster🧸🧸🧸🧸🧸🧸🧸🧸</Box>
           {/* <a
             href="https://github.com/chamod-gamage"
             target="_blank"

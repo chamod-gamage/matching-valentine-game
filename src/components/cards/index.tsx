@@ -13,6 +13,7 @@ function shuffleArray(array) {
 export const Cards: React.FC = () => {
   const [flipped, setFlipped] = useState(new Set());
   const [data, setData] = useState([]);
+  const [pokoText, setPokoText] = useState([]);
   const [hot, setHot] = useState("");
   const [hotIdx, setHotIdx] = useState(null);
   const [done, setDone] = useState([]);
@@ -26,12 +27,18 @@ export const Cards: React.FC = () => {
     setFlipped(new Set());
     setDone([]);
     let poko = JSON.parse(JSON.stringify(yam.data));
+    let milestones = [
+      "🌁", "🍁", "🦫", "🪿", "🗽", "🌏", "🥥", "🌴", "🏛️", 
+      "🌅", "🌊", "🏰", "🎭", "🛠️", "🏎️", "✈️", "❤️", "🎓", "🌟", "🌍"
+    ];
     const len = poko.length > 10 ? 0 : poko.length;
     for (let i = 0; i < len; i++) {
       poko.push(poko[i]);
     }
     shuffleArray(poko);
+    shuffleArray(milestones);
     setData(poko);
+    setPokoText(milestones);
   }, []);
 
   useEffect(() => {
@@ -86,7 +93,7 @@ export const Cards: React.FC = () => {
 
   const Reasons = () => (
     <div className="reasons">
-      <h1>20 Reasons Why:</h1>
+      <h1>Our travels together so far...</h1>
       <div
         style={{
           display: "flex",
@@ -94,7 +101,7 @@ export const Cards: React.FC = () => {
           justifyContent: "center",
         }}
       >
-        <img src="https://media1.tenor.com/images/49ab0e73f6ce9dc8c616f378899a083d/tenor.gif?itemid=12870822" />
+        <img src="https://i.ibb.co/5nbyVLN/Map-Chart-Map-1.png" />
       </div>
       <div>
         {yam.data.map((url, i) => (
@@ -189,7 +196,7 @@ export const Cards: React.FC = () => {
                     }}
                   >
                     <Text fontSize={140} margin={0}>
-                      {"POKO!"[i % 5]}
+                      {pokoText[i]}
                     </Text>
                   </Box>
                   <Box

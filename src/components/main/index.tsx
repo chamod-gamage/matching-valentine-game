@@ -1,8 +1,6 @@
 import React from "react";
 import { Box, useTheme } from "@chakra-ui/react";
 
-import { Button } from "components";
-
 export const Main: React.FC = () => {
   const theme = useTheme();
   return (
@@ -14,7 +12,7 @@ export const Main: React.FC = () => {
           margin: 0,
         }}
       >
-        🥳 insert main message 🥳
+        🥳 Happy 5 years together mathuster! 🥳
       </h1>
     </Box>
   );
